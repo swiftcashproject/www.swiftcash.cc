@@ -99,7 +99,7 @@ export default function Hero({ data }: HeroProps) {
             Launch App
           </a>
           <a
-            href="https://www.swiftcash.cc/assets/whitepaper.pdf"
+            href="./assets/whitepaper.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-2 px-7 py-3.5 rounded-xl bg-slate-100 text-slate-900 font-semibold hover:bg-white transition-all duration-200 shadow-lg shadow-white/10 hover:scale-105"
