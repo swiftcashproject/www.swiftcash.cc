@@ -1,5 +1,5 @@
 import type { SwiftData } from '@/hooks/useSwiftData';
-import { Zap, Shield, RefreshCw, Wallet, Vote, Network } from 'lucide-react';
+import { ShieldCheck, HandCoins, RefreshCcwDot, Wallet, Landmark, LockKeyholeOpen, DatabaseZap } from 'lucide-react';
 
 interface FeaturesProps {
   data: SwiftData;
@@ -14,9 +14,9 @@ interface Feature {
 
 const FEATURES: Feature[] = [
   {
-    icon: <Zap size={28} />,
+    icon: <ShieldCheck size={28} />,
     title: 'Guaranteed Interest',
-    description: 'Earn 1% to 10% APR paid directly by the SwiftCash protocol. Interest is calculated, minted and guaranteed by the SwiftCash smart contract.',
+    description: 'Earn 1% to 10% APR paid directly by the SwiftCash protocol. Interest is calculated, minted and guaranteed by a decentralized and ownerless smart contract.',
     accent: 'text-sky-400 bg-sky-500/10',
   },
   {
@@ -26,27 +26,27 @@ const FEATURES: Feature[] = [
     accent: 'text-blue-400 bg-blue-500/10',
   },
   {
-    icon: <RefreshCw size={28} />,
+    icon: <RefreshCcwDot size={28} />,
     title: 'Automatic Compounding',
-    description: 'Compounding happens automatically for everyone staking. Every deposit, withdrawal, or mint-interest call triggers compounding for all stakers.',
+    description: 'Compounding happens automatically for everyone staking. Every deposit, withdrawal, or mint-interest call triggers minting and compounding for all participants.',
     accent: 'text-cyan-400 bg-cyan-500/10',
   },
   {
-    icon: <Vote size={28} />,
+    icon: <Landmark size={28} />,
     title: 'Decentralized Monetary Policy',
-    description: 'Anyone who stakes can adjust the interest rate once per calendar month, by up to ±1 percentage point. Each stakeholder\'s voting power is proportional to their stake.',
+    description: 'Anyone who holds $SWIFT can hike or cut the interest rate once per calendar month. Each stakeholder\'s adjustment power is proportional to their stake.',
     accent: 'text-teal-400 bg-teal-500/10',
   },
   {
-    icon: <Shield size={28} />,
+    icon: <HandCoins size={28} />,
     title: 'No Team/Dev Funds',
-    description: 'SwiftCash is fully decentralized with no team funds, no budgets, and no central authority. The only way to mint new tokens is through the staking contract.',
+    description: 'SwiftCash has no team funds, no dev funds, no budgets, and no central authority. The only way to mint new tokens is through its decentralized staking protocol.',
     accent: 'text-emerald-400 bg-emerald-500/10',
   },
   {
-    icon: <Network size={28} />,
-    title: 'Built-In Staking Contract',
-    description: 'The staking contract is the token contract itself. It accepts deposits and processes withdrawals without demanding long-term commitment from participants.',
+    icon: <LockKeyholeOpen size={28} />,
+    title: 'No Lock-In Contracts',
+    description: 'No lock-in contracts or long-term commitments necessary. Earn interest while keeping your funds accessible. Withdraw anytime, with no penalties.',
     accent: 'text-indigo-400 bg-indigo-500/10',
   },
 ];
@@ -57,13 +57,14 @@ export default function Features({ data: _data }: FeaturesProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs font-medium mb-5">
+            <DatabaseZap size={15} className="animate-icon-bounce" />
             Core Features
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Why SwiftCash?
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            A truly decentralized digital cash and peer-to-peer cryptocurrency with non-custodial, and fluctuating interest rates determined by network consensus among the stakeholders.
+            A truly decentralized digital cash and peer-to-peer cryptocurrency with non-custodial yields, and stake-driven interest rate decisions that will always yield more than the blockchain's inflation.
           </p>
         </div>
 

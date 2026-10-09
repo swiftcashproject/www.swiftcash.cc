@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { TrendingUp, TrendingDown, Minus } from 'lucide-react';
+import { Scale, Gauge, CalendarDays, ChartLine } from 'lucide-react';
 import type { SwiftData } from '@/hooks/useSwiftData';
 
 interface MonetaryPolicyProps {
@@ -48,14 +48,14 @@ export default function MonetaryPolicy({ data }: MonetaryPolicyProps) {
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs font-medium mb-5">
-            Decentralized Monetary Policy
+            <ChartLine size={15} className="animate-icon-bounce" />
+            Decentralized Interest Rates
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Stake-Weighted Adjustments
+            Stake-Driven Rate Decisions
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            The interest rate fluctuates between 1% and 10%, decided collectively by everyone staking.
-            Each person can hike or cut the rate proportional to their stake, once per calendar month.
+            SwiftCash puts monetary policy in the hands of its stakeholders. Like a decentralized bank, stakeholders collectively control the annual interest rate, adjusting it between 1% and 10%. Each stakeholder's influence is proportional to their stake, with rate hikes or rate cuts permitted once per calendar month.
           </p>
         </div>
 
@@ -85,19 +85,19 @@ export default function MonetaryPolicy({ data }: MonetaryPolicyProps) {
           {/* Rules */}
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
-              <TrendingUp size={22} className="text-emerald-400 mb-3" />
-              <h3 className="text-white font-semibold mb-1.5">Proportional Voting</h3>
-              <p className="text-sm text-slate-400">Each staker's influence on the rate is proportional to their stake size.</p>
+              <Scale size={22} className="text-emerald-400 mb-3" />
+              <h3 className="text-white font-semibold mb-1.5">Proportional Power</h3>
+              <p className="text-sm text-slate-400">Each stakeholder's influence on the rate is proportional to their stake size.</p>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
-              <Minus size={22} className="text-sky-400 mb-3" />
-              <h3 className="text-white font-semibold mb-1.5">Monthly Adjustments</h3>
-              <p className="text-sm text-slate-400">Rate can be adjusted once per calendar month, except during the first month of staking.</p>
+              <CalendarDays size={22} className="text-sky-400 mb-3" />
+              <h3 className="text-white font-semibold mb-1.5">Monthly Rate Decisions</h3>
+              <p className="text-sm text-slate-400">Each stakeholder can adjust the rate once per calendar month.</p>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
-              <TrendingDown size={22} className="text-amber-400 mb-3" />
-              <h3 className="text-white font-semibold mb-1.5">Max 1% Move</h3>
-              <p className="text-sm text-slate-400">The interest rate can change by up to 1 percentage point in either direction per calendar month.</p>
+              <Gauge size={22} className="text-amber-400 mb-3" />
+              <h3 className="text-white font-semibold mb-1.5">Monthly Change Cap: ±1%</h3>
+              <p className="text-sm text-slate-400">Monthly rate changes are capped at 1% in either direction.</p>
             </div>
           </div>
         </div>

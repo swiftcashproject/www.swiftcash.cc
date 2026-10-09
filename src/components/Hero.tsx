@@ -37,14 +37,14 @@ export default function Hero({ data }: HeroProps) {
         <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
           Swift<span className="text-sky-400">Cash</span>
           <span className="block text-2xl sm:text-3xl lg:text-4xl text-slate-400 font-normal mt-3">
-            Decentralized Crypto Savings
+            Non-Custodial Crypto Savings
           </span>
         </h1>
 
         {/* Description */}
         <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-          SwiftCash is a decentralized digital cash and peer-to-peer cryptocurrency built on BNB Chain with a stake-weighted monetary policy.
-          Earn 1% to 10% APR through non-custodial staking with automatic compounding — no lock-up, no custodian, full control of your tokens at all times.
+          SwiftCash is a decentralized digital cash and cryptocurrency with stake-driven interest rate decisions.
+          Earn 1% to 10% APR with automatic compounding — no custodian or lock-in contracts, full control of your tokens at all times.
         </p>
 
         {/* Live price card */}

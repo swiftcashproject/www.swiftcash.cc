@@ -1,4 +1,4 @@
-import { Cpu, GitBranch, Rocket, Lock } from 'lucide-react';
+import { Cpu, GitBranch, CalendarArrowUp, ExternalLink, ShieldCheck, ShieldEllipsis, Milestone } from 'lucide-react';
 
 interface TimelineEvent {
   year: string;
@@ -9,28 +9,28 @@ interface TimelineEvent {
 
 const TIMELINE: TimelineEvent[] = [
   {
-    year: 'Mid 2017',
+    year: 'Q3 2017',
     title: 'Proof-of-Work Origins',
-    description: 'SwiftCash started as a Proof-of-Work Bitcoin fork mixed with elements of Proof-of-Labor and Proof-of-Stake, establishing the foundational blockchain and initial distribution of tokens.',
+    description: 'The SwiftCash journey dates back to Q3 2017 as a modified fork of Bitcoin, incorporating elements of both Proof-of-Labor and Proof-of-Stake.',
     icon: <Cpu size={24} />,
   },
   {
-    year: 'Late 2018',
+    year: 'Q4 2018',
     title: 'Transition to Proof-of-Stake',
-    description: 'SwiftCash became a Proof-of-Stake blockchain on October 28, 2018, enabling decentralized staking and interest payments.',
+    description: 'On October 28, 2018, SwiftCash first launched as a 100% Proof-of-Stake blockchain, enabling decentralized staking and interest payments.',
     icon: <GitBranch size={24} />,
   },
   {
     year: 'Ongoing',
-    title: 'Non-Custodial Staking',
-    description: 'The SwiftCash contract accepts deposits and processes withdrawals in a decentralized non-custodial fashion with no lock-up or long-term commitment required. You retain full control of your stake at all times.',
-    icon: <Lock size={24} />,
+    title: 'Non-Custodial Yields',
+    description: 'Decentralized and non-custodial deposits that earn interest, stake-driven rate decisions, and no team or developer funds to dilute your stake.',
+    icon: <ShieldCheck size={24} />,
   },
   {
-    year: 'Today',
-    title: 'Decentralized Monetary Policy',
-    description: 'Stake-weighted governance lets SwiftCash holders hike or cut the interest rate once per calendar month, with voting power proportional to their stake.',
-    icon: <Rocket size={24} />,
+    year: 'Upcoming',
+    title: 'Non-Inflationary Farms',
+    description: 'Lend USDT, USDC, BNB, etc and earn $SWIFT, powered by the Venus protocol. The yield from Venus will be used to buy SwiftCash at market price.',
+    icon: <CalendarArrowUp size={24} />,
   },
 ];
 
@@ -40,11 +40,12 @@ export default function History() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs font-medium mb-5">
-            History
+            <Milestone size={15} className="animate-icon-bounce" />
+            History and Roadmap
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">From forking Bitcoin to PoS</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">From forking Bitcoin to DeFi</h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            SwiftCash has evolved from a Bitcoin fork into a fully decentralized Proof-of-Stake digital cash with decentralized interest rates.
+            SwiftCash has evolved from a Bitcoin fork into a 100% Proof-of-Stake economy with stake-driven rate decisions and non-custodial yields.
           </p>
         </div>
 
@@ -75,6 +76,36 @@ export default function History() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-300">
+            <ShieldEllipsis size={15} className="animate-icon-bounce" />
+            Security Audits
+          </div>
+
+          <div className="space-y-4 text-left">
+            <a href="./assets/swiftcash-audit.pdf" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-6 rounded-2xl border border-emerald-500/25 bg-emerald-500/10 p-5 transition-all duration-300 hover:border-emerald-400/50 hover:bg-emerald-500/15">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-400/15 text-emerald-300"><ShieldCheck size={26} /></div>
+                <div><div className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Security Audit</div><div className="text-white">SwiftCash.sol review by auditforge.org</div></div>
+              </div>
+              <div className="flex shrink-0 items-center gap-3">
+                <div className="text-right"><div className="text-3xl font-bold text-emerald-300">100<span className="text-base font-medium text-emerald-300/70">/100</span></div><div className="text-xs text-slate-400">View report</div></div>
+                <ExternalLink size={18} className="text-emerald-300 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </div>
+            </a>
+            <a href="./assets/migration-audit.pdf" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-6 rounded-2xl border border-emerald-500/25 bg-emerald-500/10 p-5 transition-all duration-300 hover:border-emerald-400/50 hover:bg-emerald-500/15">
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-400/15 text-emerald-300"><ShieldCheck size={26} /></div>
+                <div><div className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-300">Security Audit</div><div className="text-white">Migration.sol review by auditforge.org</div></div>
+              </div>
+              <div className="flex shrink-0 items-center gap-3">
+                <div className="text-right"><div className="text-3xl font-bold text-emerald-300">100<span className="text-base font-medium text-emerald-300/70">/100</span></div><div className="text-xs text-slate-400">View report</div></div>
+                <ExternalLink size={18} className="text-emerald-300 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>

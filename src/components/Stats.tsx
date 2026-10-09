@@ -1,6 +1,6 @@
 import type { SwiftData } from '@/hooks/useSwiftData';
 import { formatPrice, formatLargeNumber, formatSupply, formatPercent, formatNumber } from '@/utils/format';
-import { DollarSign, BarChart3, Coins, TrendingUp, Users, Layers, Activity, Award } from 'lucide-react';
+import { DollarSign, ChartNoAxesCombined, Coins, ArrowLeftRight, Users, ChartColumnIncreasing, ChartColumnDecreasing, Activity, Blocks } from 'lucide-react';
 
 interface StatsProps {
   data: SwiftData;
@@ -68,7 +68,7 @@ export default function Stats({ data }: StatsProps) {
               delay={0}
             />
             <StatCard
-              icon={<BarChart3 size={20} className="text-white" />}
+              icon={<ChartNoAxesCombined size={20} className="text-white" />}
               label="Market Cap"
               value={formatLargeNumber(m.marketCap)}
               sublabel={`Rank #${formatNumber(m.marketCapRank)}`}
@@ -76,7 +76,7 @@ export default function Stats({ data }: StatsProps) {
               delay={80}
             />
             <StatCard
-              icon={<TrendingUp size={20} className="text-white" />}
+              icon={<ArrowLeftRight size={20} className="text-white" />}
               label="24h Volume"
               value={formatLargeNumber(m.volume24h)}
               sublabel={`High: ${formatPrice(m.high24h)}`}
@@ -100,7 +100,7 @@ export default function Stats({ data }: StatsProps) {
               delay={320}
             />
             <StatCard
-              icon={<Award size={20} className="text-white" />}
+              icon={<ChartColumnIncreasing size={20} className="text-white" />}
               label="All-Time High"
               value={formatPrice(m.ath)}
               sublabel={`${formatPercent(m.athChangePercentage)} from ATH`}
@@ -108,7 +108,7 @@ export default function Stats({ data }: StatsProps) {
               delay={400}
             />
             <StatCard
-              icon={<Layers size={20} className="text-white" />}
+              icon={<ChartColumnDecreasing size={20} className="text-white" />}
               label="All-Time Low"
               value={formatPrice(m.atl)}
               sublabel={`${formatPercent(m.atlChangePercentage)} from ATL`}
@@ -116,7 +116,7 @@ export default function Stats({ data }: StatsProps) {
               delay={480}
             />
             <StatCard
-              icon={<Users size={20} className="text-white" />}
+              icon={<Blocks size={20} className="text-white" />}
               label="Consensus"
               value="Proof of Stake"
               sublabel="Since Oct 2018"

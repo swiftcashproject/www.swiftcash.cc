@@ -1,5 +1,5 @@
 import Logo from './Logo';
-import { Github, Twitter, Send, MessageCircle, Facebook, Instagram, Sparkles } from 'lucide-react';
+import { Github, Twitter, Send, MessageCircle, Facebook, Instagram, ChartCandlestick } from 'lucide-react';
 
 const SOCIAL_LINKS = [
   {
@@ -55,17 +55,17 @@ export default function Footer() {
             Join the SwiftCash Community
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto mb-8 text-lg">
-            Start staking today and earn guaranteed interest on your digital cash. No custodian, no lock-up, full control.
+            Start staking today and earn guaranteed interest on your digital cash. No custodian or lock-in contracts. You stay in full control.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://wallet.swiftcash.cc"
+              href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x99945f484EBc48F5307cC00cF8dCF8d6D3d4B017"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 px-7 py-3.5 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-all duration-200 shadow-lg shadow-sky-500/25 hover:scale-105"
             >
-              <Sparkles size={18} className="group-hover:animate-icon-bounce" />
-              Get Started
+              <ChartCandlestick size={18} className="group-hover:animate-icon-bounce" />
+              Buy $SWIFT
             </a>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function Footer() {
             <span className="font-bold text-white">Swift<span className="text-sky-400">Cash</span></span>
           </div>
           <p className="text-sm text-slate-500 max-w-2xl mx-auto">
-            Decentralized digital cash with a stake-weighted monetary policy. Not financial advice.
+            Decentralized digital cash with stake-driven interest rates. Not financial advice.
             Cryptocurrency investments are subject to market risks.
           </p>
         </div>
