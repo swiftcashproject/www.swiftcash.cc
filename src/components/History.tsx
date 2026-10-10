@@ -89,7 +89,7 @@ export default function History() {
             <ShieldEllipsis size={15} className="animate-icon-bounce" />
             Security Audits
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Independent Smart Contract Reviews</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Smart Contract Reviews</h2>
           <p className="text-slate-400 max-w-3xl mx-auto text-lg mb-10">
             SwiftCash contracts are verified and open source, with their code publicly available on the BNB blockchain explorer. Additionally, SWIFT contracts have undergone independent security assessments by AuditForge using multiple analysis engines.
           </p>
