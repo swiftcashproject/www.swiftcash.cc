@@ -38,7 +38,7 @@ const RESOURCE_LINKS = [
   { label: 'Explorer', href: 'https://explorer.swiftcash.cc/' },
   { label: 'CoinGecko', href: 'https://www.coingecko.com/en/coins/swiftcash' },
   { label: 'CoinMarketCap', href: 'https://coinmarketcap.com/currencies/swiftcash' },
-  { label: 'BscScan', href: 'https://bscscan.com/token/0x99945f484ebc48f5307cc00cf8dcf8d6d3d4b017' },
+  { label: 'Hive', href: 'https://ecency.com/@swiftcash' },
 ];
 
 export default function Footer() {

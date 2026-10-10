@@ -44,7 +44,7 @@ export default function Hero({ data }: HeroProps) {
         {/* Description */}
         <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
           SwiftCash is a decentralized digital cash and cryptocurrency with stake-driven interest rate decisions.
-          Earn 1% to 10% APR with automatic compounding — no custodian or lock-in contracts, full control of your tokens at all times.
+          Earn 1% to 10% APR with automatic compounding — no custodian or lock-in contracts, full control of your funds at all times.
         </p>
 
         {/* Live price card */}
@@ -56,17 +56,17 @@ export default function Hero({ data }: HeroProps) {
             </div>
           ) : market ? (
             <>
-              <div className="text-left">
+              <div className="text-center">
                 <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">$SWIFT Price</div>
                 <div className="text-2xl sm:text-3xl font-bold text-white">
                   {formatPrice(market.price)}
                 </div>
               </div>
               <div className="hidden sm:block w-px h-12 bg-slate-700" />
-              <div className="text-left">
+              <div className="text-center">
                 <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">24h Change</div>
                 <div
-                  className={`text-2xl sm:text-3xl font-bold flex items-center gap-1 ${
+                  className={`text-2xl sm:text-3xl font-bold flex items-center justify-center gap-1 ${ 
                     isPositive ? 'text-emerald-400' : 'text-red-400'
                   }`}
                 >
@@ -75,7 +75,7 @@ export default function Hero({ data }: HeroProps) {
                 </div>
               </div>
               <div className="hidden sm:block w-px h-12 bg-slate-700" />
-              <div className="text-left">
+              <div className="text-center">
                 <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Market Cap</div>
                 <div className="text-2xl sm:text-3xl font-bold text-white">
                   {formatLargeNumber(market.marketCap)}

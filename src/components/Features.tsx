@@ -34,13 +34,13 @@ const FEATURES: Feature[] = [
   {
     icon: <Landmark size={28} />,
     title: 'Decentralized Monetary Policy',
-    description: 'Anyone who holds $SWIFT can hike or cut the interest rate once per calendar month. Each stakeholder\'s adjustment power is proportional to their stake.',
+    description: 'Anyone who holds SwiftCash can hike or cut the interest rate once per calendar month. Each stakeholder\'s adjustment power is proportional to their stake.',
     accent: 'text-teal-400 bg-teal-500/10',
   },
   {
     icon: <HandCoins size={28} />,
     title: 'No Team/Dev Funds',
-    description: 'SwiftCash has no team funds, dev funds, or budgets, and no central authority. The only way to mint new tokens is via an ownerless and decentralized staking protocol.',
+    description: 'SwiftCash has no team funds, dev funds, or budgets, and no central authority. The only way to mint new coins is via an ownerless and decentralized staking protocol.',
     accent: 'text-emerald-400 bg-emerald-500/10',
   },
   {
