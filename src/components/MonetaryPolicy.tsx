@@ -66,7 +66,7 @@ export default function MonetaryPolicy({ data }: MonetaryPolicyProps) {
             <div className="text-6xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">
               {rate.toFixed(2)}%
             </div>
-            <div className="mt-2 flex items-center justify-center gap-2 text-slate-400">APR, minted and paid by the protocol <BadgeCheck size={17} className="text-emerald-400" /></div>
+            <div className="mt-2 flex items-center justify-center gap-2 text-slate-400">Interest is minted and paid by the protocol <BadgeCheck size={17} className="text-emerald-400" /></div>
           </div>
 
           {/* Rate bar */}
