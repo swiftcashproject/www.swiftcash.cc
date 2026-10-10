@@ -9,15 +9,15 @@ interface TimelineEvent {
 
 const TIMELINE: TimelineEvent[] = [
   {
-    year: 'Q3 2017',
+    year: 'July 2017',
     title: 'Proof-of-Work Origins',
-    description: 'The SwiftCash journey dates back to Q3 2017 as a modified fork of Bitcoin, incorporating elements of both Proof-of-Labor and Proof-of-Stake.',
+    description: 'The SwiftCash journey dates back to July 2017 as a modified fork of Bitcoin, with elements of Proof-of-Labor and Proof-of-Stake.',
     icon: <Cpu size={24} />,
   },
   {
-    year: 'Q4 2018',
+    year: 'October 2018',
     title: 'Transition to Proof-of-Stake',
-    description: 'On October 28, 2018, SwiftCash first launched as a 100% Proof-of-Stake blockchain, enabling decentralized staking and interest payments.',
+    description: 'On October 28, 2018, SwiftCash forked into a 100% Proof-of-Stake blockchain, enabling decentralized staking and interest payments.',
     icon: <GitBranch size={24} />,
   },
   {
@@ -29,7 +29,7 @@ const TIMELINE: TimelineEvent[] = [
   {
     year: 'Upcoming',
     title: 'Non-Inflationary Farms',
-    description: 'Lend USDT, USDC, BNB, etc and earn $SWIFT, powered by the Venus protocol. The yield from Venus will be used to buy SwiftCash at market price.',
+    description: 'Lend USDT, USDC, BNB, CAKE, BTC, LTC, etc and earn $SWIFT, powered by the Venus protocol. The yield from Venus will be used to buy SwiftCash at market price.',
     icon: <CalendarArrowUp size={24} />,
   },
 ];
@@ -43,7 +43,7 @@ export default function History() {
             <Milestone size={15} className="animate-icon-bounce" />
             History and Roadmap
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">From forking Bitcoin to DeFi</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Bitcoin Fork, PoS and DeFi</h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
             SwiftCash has evolved from a Bitcoin fork into a 100% Proof-of-Stake economy with stake-driven rate decisions and non-custodial yields.
           </p>
@@ -83,6 +83,10 @@ export default function History() {
             <ShieldEllipsis size={15} className="animate-icon-bounce" />
             Security Audits
           </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Independent Smart Contract Reviews</h2>
+          <p className="text-slate-400 max-w-3xl mx-auto text-lg mb-10">
+            SwiftCash smart contracts are verified and open source, with their code publicly available on the blockchain explorer. Additionally, the contracts have undergone independent security assessments by Audit Forge using multiple analysis engines. Assessment reports and security scores are provided below.
+          </p>
 
           <div className="space-y-4 text-left">
             <a href="./assets/swiftcash-audit.pdf" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between gap-6 rounded-2xl border border-emerald-500/25 bg-emerald-500/10 p-5 transition-all duration-300 hover:border-emerald-400/50 hover:bg-emerald-500/15">

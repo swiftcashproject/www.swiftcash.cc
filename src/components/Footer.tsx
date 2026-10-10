@@ -108,8 +108,7 @@ export default function Footer() {
             <span className="font-bold text-white">Swift<span className="text-sky-400">Cash</span></span>
           </div>
           <p className="text-sm text-slate-500 max-w-2xl mx-auto">
-            Decentralized digital cash with stake-driven interest rates. Not financial advice.
-            Cryptocurrency investments are subject to market risks.
+            Not financial advice. Cryptocurrency investments are subject to market risks.
           </p>
         </div>
       </div>

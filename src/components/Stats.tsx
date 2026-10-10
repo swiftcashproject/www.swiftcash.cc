@@ -43,9 +43,6 @@ export default function Stats({ data }: StatsProps) {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">Live Market Statistics</h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Real-time market data sourced from CoinGecko. Updates automatically every 10 minutes.
-          </p>
           {data.error && (
             <p className="mt-3 text-sm text-amber-400/80 bg-amber-500/10 inline-block px-4 py-1.5 rounded-lg border border-amber-500/20">
               {data.error}

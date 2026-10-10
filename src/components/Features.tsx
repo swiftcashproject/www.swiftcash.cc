@@ -22,13 +22,13 @@ const FEATURES: Feature[] = [
   {
     icon: <Wallet size={28} />,
     title: 'Non-Custodial Staking',
-    description: 'Your stake remains in your own wallet while it accumulates interest. No third party, no custodian, no lock-up. You stay in full control.',
+    description: 'Your stake remains in your own wallet while it accumulates interest. No third party, or custodian will be able to access your funds. You maintain full ownership.',
     accent: 'text-blue-400 bg-blue-500/10',
   },
   {
     icon: <RefreshCcwDot size={28} />,
     title: 'Automatic Compounding',
-    description: 'Compounding happens automatically for everyone staking. Every deposit, withdrawal, or mint-interest call triggers minting and compounding for all participants.',
+    description: 'Compounding happens automatically for all participants. Every deposit, withdrawal, or mint-interest call triggers compounding for everyone.',
     accent: 'text-cyan-400 bg-cyan-500/10',
   },
   {
@@ -40,13 +40,13 @@ const FEATURES: Feature[] = [
   {
     icon: <HandCoins size={28} />,
     title: 'No Team/Dev Funds',
-    description: 'SwiftCash has no team funds, no dev funds, no budgets, and no central authority. The only way to mint new tokens is through its decentralized staking protocol.',
+    description: 'SwiftCash has no team funds, dev funds, or budgets, and no central authority. The only way to mint new tokens is via an ownerless and decentralized staking protocol.',
     accent: 'text-emerald-400 bg-emerald-500/10',
   },
   {
     icon: <LockKeyholeOpen size={28} />,
     title: 'No Lock-In Contracts',
-    description: 'No lock-in contracts or long-term commitments necessary. Earn interest while keeping your funds accessible. Withdraw anytime, with no penalties.',
+    description: 'No lock-in contracts or long-term commitments are required. Earn interest while keeping your funds accessible. Withdraw anytime with no penalties.',
     accent: 'text-indigo-400 bg-indigo-500/10',
   },
 ];
@@ -64,7 +64,7 @@ export default function Features({ data: _data }: FeaturesProps) {
             Why SwiftCash?
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            A truly decentralized digital cash and peer-to-peer cryptocurrency with non-custodial yields, and stake-driven interest rate decisions that will always yield more than the blockchain's inflation.
+            A truly decentralized digital cash and cryptocurrency with non-custodial yields, and stake-driven interest rates between 1% and 10%. SwiftCash deposits are designed to always outpace the blockchain's inflation.
           </p>
         </div>
 

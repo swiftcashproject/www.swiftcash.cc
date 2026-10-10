@@ -105,7 +105,7 @@ export function useSwiftData(): SwiftData {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 600000);
+    const interval = setInterval(fetchData, 3600000);
     return () => clearInterval(interval);
   }, [fetchData]);
 

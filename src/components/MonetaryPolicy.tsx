@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Scale, Gauge, CalendarDays, ChartLine } from 'lucide-react';
+import { Scale, Gauge, CalendarDays, ChartLine, SquarePercent, Layers, ChartPie, ChartSpline } from 'lucide-react';
 import type { SwiftData } from '@/hooks/useSwiftData';
 
 interface MonetaryPolicyProps {
@@ -62,7 +62,7 @@ export default function MonetaryPolicy({ data }: MonetaryPolicyProps) {
         {/* Interest rate gauge */}
         <div className="p-8 sm:p-12 rounded-3xl bg-slate-950/60 backdrop-blur-sm border border-slate-800/60 shadow-2xl">
           <div className="text-center mb-10">
-            <div className="text-sm text-slate-500 uppercase tracking-wider mb-2">Current Annual Interest Rate</div>
+            <div className="flex items-center justify-center gap-2 text-sm text-slate-500 uppercase tracking-wider mb-2"><SquarePercent size={17} className="text-sky-400" />Current Annual Interest Rate</div>
             <div className="text-6xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">
               {rate.toFixed(2)}%
             </div>
@@ -80,6 +80,24 @@ export default function MonetaryPolicy({ data }: MonetaryPolicyProps) {
           <div className="flex justify-between text-sm text-slate-500">
             <span>1% Min</span>
             <span>10% Max</span>
+          </div>
+          
+           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
+              <Layers size={22} className="text-sky-400 mb-3" />
+              <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Total Deposits</div>
+              <div className="text-2xl font-bold text-white">150M SWIFT</div>
+            </div>
+            <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
+              <ChartPie size={22} className="text-emerald-400 mb-3" />
+              <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Participation Rate</div>
+              <div className="text-2xl font-bold text-white">55%</div>
+            </div>
+            <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
+              <ChartSpline size={22} className="text-amber-400 mb-3" />
+              <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Annualized Inflation</div>
+              <div className="text-2xl font-bold text-white">1.65%</div>
+            </div>
           </div>
 
           {/* Rules */}
