@@ -1,4 +1,4 @@
-import { Cpu, GitBranch, CalendarArrowUp, ExternalLink, ShieldCheck, ShieldEllipsis, Milestone } from 'lucide-react';
+import { Cpu, GitBranch, CalendarArrowUp, Luggage, ExternalLink, ShieldCheck, ShieldEllipsis, Milestone } from 'lucide-react';
 
 interface TimelineEvent {
   year: string;
@@ -19,6 +19,12 @@ const TIMELINE: TimelineEvent[] = [
     title: 'Transition to Proof-of-Stake',
     description: 'On October 28, 2018, SwiftCash forked into a 100% Proof-of-Stake blockchain, enabling decentralized staking and interest payments.',
     icon: <GitBranch size={24} />,
+  },
+  {
+    year: 'November 2026',
+    title: 'Migration to the BNB Chain',
+    description: 'On November 25, 2026, SwiftCash transitioned to a native BEP-20 token on the BNB Chain. An additional ~15M SWIFT was minted to establish permanent liquidity pools.',
+    icon: <Luggage size={24} />,
   },
   {
     year: 'Ongoing',
@@ -85,7 +91,7 @@ export default function History() {
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Independent Smart Contract Reviews</h2>
           <p className="text-slate-400 max-w-3xl mx-auto text-lg mb-10">
-            SwiftCash smart contracts are verified and open source, with their code publicly available on the blockchain explorer. Additionally, the contracts have undergone independent security assessments by Audit Forge using multiple analysis engines. Assessment reports and security scores are provided below.
+            SwiftCash contracts are verified and open source, with their code publicly available on the BNB blockchain explorer. Additionally, SWIFT contracts have undergone independent security assessments by AuditForge using multiple analysis engines.
           </p>
 
           <div className="space-y-4 text-left">

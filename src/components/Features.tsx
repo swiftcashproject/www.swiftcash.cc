@@ -28,7 +28,7 @@ const FEATURES: Feature[] = [
   {
     icon: <RefreshCcwDot size={28} />,
     title: 'Automatic Compounding',
-    description: 'Compounding happens automatically for all participants. Every deposit, withdrawal, or mint-interest call triggers compounding for everyone.',
+    description: 'Compounding is automatic for all participants. Every deposit, withdrawal, or mint-interest call mints all accrued interest, triggering compounding across the entire pool.',
     accent: 'text-cyan-400 bg-cyan-500/10',
   },
   {
