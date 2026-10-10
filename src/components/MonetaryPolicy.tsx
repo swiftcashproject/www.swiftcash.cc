@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Scale, Gauge, CalendarDays, ChartLine, SquarePercent, Layers, ChartPie, ChartSpline } from 'lucide-react';
+import { Scale, Gauge, CalendarDays, ChartLine, BadgePercent, BadgeCheck, Layers, ChartPie, ChartSpline } from 'lucide-react';
 import type { SwiftData } from '@/hooks/useSwiftData';
 
 interface MonetaryPolicyProps {
@@ -62,11 +62,11 @@ export default function MonetaryPolicy({ data }: MonetaryPolicyProps) {
         {/* Interest rate gauge */}
         <div className="p-8 sm:p-12 rounded-3xl bg-slate-950/60 backdrop-blur-sm border border-slate-800/60 shadow-2xl">
           <div className="text-center mb-10">
-            <div className="flex items-center justify-center gap-2 text-sm text-slate-500 uppercase tracking-wider mb-2"><SquarePercent size={17} className="text-sky-400" />Current Annual Interest Rate</div>
+            <div className="flex items-center justify-center gap-2 text-sm text-slate-500 uppercase tracking-wider mb-2">Current Annual Interest Rate<BadgePercent size={17} className="text-sky-400" /></div>
             <div className="text-6xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">
               {rate.toFixed(2)}%
             </div>
-            <div className="mt-2 text-slate-400">APR, minted and paid by the protocol</div>
+            <div className="mt-2 text-slate-400">APR, minted and paid by the protocol<BadgeCheck size={17} className="text-sky-400" /></div>
           </div>
 
           {/* Rate bar */}
