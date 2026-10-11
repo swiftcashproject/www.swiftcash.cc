@@ -2,7 +2,7 @@ import { Layers2, Scale3D, ChartPie, GitCompareArrows } from 'lucide-react';
 
 export default function Advantages() {
   return (
-    <section id="advantages" className="relative py-24 bg-slate-900">
+    <section id="advantages" className="relative py-24 bg-slate-900 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky-500/5 rounded-full blur-[150px]" />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || mobileOpen
           ? 'bg-slate-950/90 backdrop-blur-lg border-b border-slate-800/60 shadow-lg shadow-black/20'
           : 'bg-transparent'
       }`}
@@ -72,7 +72,7 @@ export default function Navbar() {
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden pb-4 flex flex-col gap-3 animate-fade-in">
+          <div className="md:hidden pb-4 flex flex-col gap-3 animate-fade-in max-h-[calc(100vh-4rem)] overflow-y-auto">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
