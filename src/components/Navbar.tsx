@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import Logo from './Logo';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, X, TextSearch, Landmark, ChartNoAxesCombined, DatabaseZap, GitCompareArrows, ChartLine, Milestone, ShieldEllipsis, UsersRound } from 'lucide-react';
 
 const NAV_LINKS = [
-  { label: 'Overview', href: '#overview' },
-  { label: 'Stats', href: '#stats' },
-  { label: 'Features', href: '#features' },
-  { label: 'Monetary Policy', href: '#monetary-policy' },
-  { label: 'History', href: '#history' },
-  { label: 'Community', href: '#community' },
+  { label: 'Overview', href: '#overview', icon: <Landmark size={19} /> },
+  { label: 'Stats', href: '#stats', icon: <ChartNoAxesCombined size={19} /> },
+  { label: 'Features', href: '#features', icon: <DatabaseZap size={19} /> },
+  { label: 'Advantages', href: '#advantages', icon: <GitCompareArrows size={19} /> },
+  { label: 'Tokenomics', href: '#tokenomics', icon: <ChartLine size={19} /> },
+  { label: 'History', href: '#history', icon: <Milestone size={19} /> },
+  { label: 'Audits', href: '#audits', icon: <ShieldEllipsis size={19} /> },
+  { label: 'Community', href: '#community', icon: <UsersRound size={19} /> },
 ];
 
 export default function Navbar() {
@@ -43,8 +45,9 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors duration-200"
+                className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors duration-200"
               >
+                {link.icon}
                 {link.label}
               </a>
             ))}
@@ -54,7 +57,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="group flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg bg-sky-500 text-white hover:bg-sky-400 transition-all duration-200 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/40 hover:scale-105"
             >
-              <Search size={16} className="group-hover:animate-icon-bounce" />
+              <TextSearch size={16} className="group-hover:animate-icon-bounce" />
               Explorer
             </a>
           </div>
@@ -75,8 +78,9 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors px-2 py-1.5"
+                className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors px-2 py-1.5"
               >
+                {link.icon}
                 {link.label}
               </a>
             ))}
@@ -86,7 +90,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="group flex items-center justify-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg bg-sky-500 text-white text-center"
             >
-              <Search size={16} className="group-hover:animate-icon-bounce" />
+              <TextSearch size={16} className="group-hover:animate-icon-bounce" />
               Explorer
             </a>
           </div>
