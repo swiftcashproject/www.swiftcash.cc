@@ -1,5 +1,5 @@
 import type { SwiftData } from '@/hooks/useSwiftData';
-import { BriefcasePlus, HandCoins, RefreshCcwDot, Wallet, Landmark, LockKeyholeOpen, DatabaseZap } from 'lucide-react';
+import { BriefcasePlus, HandCoins, DatabasePlus, Wallet, Landmark, LockKeyholeOpen, DatabaseZap } from 'lucide-react';
 
 interface FeaturesProps {
   data: SwiftData;
@@ -26,16 +26,16 @@ const FEATURES: Feature[] = [
     accent: 'text-blue-400 bg-blue-500/10',
   },
   {
-    icon: <RefreshCcwDot size={28} />,
+    icon: <DatabasePlus size={28} />,
     title: 'Automatic Compounding',
     description: 'Compounding is automatic for all participants. Every deposit, withdrawal, or mint-interest call mints all accrued interest, triggering compounding across the entire pool.',
-    accent: 'text-cyan-400 bg-cyan-500/10',
+    accent: 'text-slate-400 bg-slate-500/10',
   },
   {
     icon: <Landmark size={28} />,
     title: 'Distributed Monetary Policy',
     description: 'Anyone who holds SwiftCash can hike or cut the interest rate once per calendar month. Each stakeholder\'s adjustment power is proportional to their stake.',
-    accent: 'text-teal-400 bg-teal-500/10',
+    accent: 'text-sky-600 bg-sky-500/10',
   },
   {
     icon: <HandCoins size={28} />,
