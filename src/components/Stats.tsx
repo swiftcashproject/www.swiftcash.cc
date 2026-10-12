@@ -1,6 +1,6 @@
 import type { SwiftData } from '@/hooks/useSwiftData';
 import { formatPrice, formatLargeNumber, formatSupply, formatPercent, formatNumber } from '@/utils/format';
-import { DollarSign, ChartNoAxesCombined, Coins, ArrowLeftRight, Users, ChartColumnIncreasing, ChartColumnDecreasing, Activity, Blocks } from 'lucide-react';
+import { Receipt, ChartNoAxesCombined, ChartGantt, Repeat2, Users, ChartColumnIncreasing, ChartColumnDecreasing, Activity, Blocks } from 'lucide-react';
 
 interface StatsProps {
   data: SwiftData;
@@ -57,7 +57,7 @@ export default function Stats({ data }: StatsProps) {
         ) : m ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <StatCard
-              icon={<DollarSign size={20} className="text-white" />}
+              icon={<Receipt size={20} className="text-white" />}
               label="$SWIFT Price"
               value={formatPrice(m.price)}
               sublabel={`24h: ${formatPercent(m.priceChange24h)}`}
@@ -73,7 +73,7 @@ export default function Stats({ data }: StatsProps) {
               delay={80}
             />
             <StatCard
-              icon={<ArrowLeftRight size={20} className="text-white" />}
+              icon={<Repeat2 size={20} className="text-white" />}
               label="24h Volume"
               value={formatLargeNumber(m.volume24h)}
               sublabel={`High: ${formatPrice(m.high24h)}`}
@@ -81,11 +81,11 @@ export default function Stats({ data }: StatsProps) {
               delay={160}
             />
             <StatCard
-              icon={<Coins size={20} className="text-white" />}
+              icon={<ChartGantt size={20} className="text-white" />}
               label="Circulating Supply"
               value={`${formatSupply(m.circulatingSupply)} SWIFT`}
               sublabel={`Total: ${formatSupply(m.totalSupply)} SWIFT`}
-              accent="from-teal-500 to-emerald-600"
+              accent="from-sky-500 to-emerald-600"
               delay={240}
             />
             <StatCard

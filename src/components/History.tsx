@@ -1,4 +1,4 @@
-import { Cpu, GitBranch, CalendarArrowUp, Luggage, ShieldCheck, Milestone } from 'lucide-react';
+import { Cpu, GitFork, CalendarArrowUp, Luggage, Wallet, CalendarClock } from 'lucide-react';
 
 interface TimelineEvent {
   year: string;
@@ -18,7 +18,7 @@ const TIMELINE: TimelineEvent[] = [
     year: 'October 2018',
     title: 'Transition to Proof-of-Stake',
     description: 'On October 28, 2018, SwiftCash forked into a 100% Proof-of-Stake blockchain, enabling decentralized staking and interest payments.',
-    icon: <GitBranch size={24} />,
+    icon: <GitFork size={24} />,
   },
   {
     year: 'November 2026',
@@ -30,7 +30,7 @@ const TIMELINE: TimelineEvent[] = [
     year: 'Ongoing',
     title: 'Non-Custodial Yields',
     description: 'Decentralized and non-custodial deposits that earn interest, stake-driven rate decisions, and no team or developer funds to dilute your stake.',
-    icon: <ShieldCheck size={24} />,
+    icon: <Wallet size={24} />,
   },
   {
     year: 'Upcoming',
@@ -46,7 +46,7 @@ export default function History() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300 text-xs font-medium mb-5">
-            <Milestone size={15} className="animate-icon-bounce" />
+            <CalendarClock size={15} className="animate-icon-bounce" />
             History and Roadmap
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Bitcoin Fork, PoS and DeFi</h2>

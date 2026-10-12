@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 import Logo from './Logo';
-import { Menu, X, TextSearch, Landmark, ChartNoAxesCombined, DatabaseZap, GitCompareArrows, ChartLine, Milestone, ShieldEllipsis, UsersRound } from 'lucide-react';
+import { Menu, X, TextSearch, LampDesk, ChartNoAxesCombined, DatabaseZap, GitCompareArrows, ChartLine, CalendarClock, ShieldCogCorner, Handshake } from 'lucide-react';
 
 const NAV_LINKS = [
-  { label: 'Overview', href: '#overview', icon: <Landmark size={19} /> },
+  { label: 'Overview', href: '#overview', icon: <LampDesk size={19} /> },
   { label: 'Stats', href: '#stats', icon: <ChartNoAxesCombined size={19} /> },
   { label: 'Features', href: '#features', icon: <DatabaseZap size={19} /> },
   { label: 'Advantages', href: '#advantages', icon: <GitCompareArrows size={19} /> },
   { label: 'Tokenomics', href: '#tokenomics', icon: <ChartLine size={19} /> },
-  { label: 'History', href: '#history', icon: <Milestone size={19} /> },
-  { label: 'Audits', href: '#audits', icon: <ShieldEllipsis size={19} /> },
-  { label: 'Community', href: '#community', icon: <UsersRound size={19} /> },
+  { label: 'History', href: '#history', icon: <CalendarClock size={19} /> },
+  { label: 'Audits', href: '#audits', icon: <ShieldCogCorner size={19} /> },
+  { label: 'Community', href: '#community', icon: <Handshake size={19} /> },
 ];
 
 export default function Navbar() {

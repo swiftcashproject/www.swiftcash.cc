@@ -1,5 +1,5 @@
 import type { SwiftData } from '@/hooks/useSwiftData';
-import { ShieldCheck, HandCoins, RefreshCcwDot, Wallet, Landmark, LockKeyholeOpen, DatabaseZap } from 'lucide-react';
+import { BriefcasePlus, HandCoins, RefreshCcwDot, Wallet, Landmark, LockKeyholeOpen, DatabaseZap } from 'lucide-react';
 
 interface FeaturesProps {
   data: SwiftData;
@@ -14,7 +14,7 @@ interface Feature {
 
 const FEATURES: Feature[] = [
   {
-    icon: <ShieldCheck size={28} />,
+    icon: <BriefcasePlus size={28} />,
     title: 'Guaranteed Interest',
     description: 'Earn 1% to 10% APR paid directly by the SwiftCash protocol. Interest is calculated, minted and guaranteed by a decentralized and ownerless smart contract.',
     accent: 'text-sky-400 bg-sky-500/10',
@@ -33,7 +33,7 @@ const FEATURES: Feature[] = [
   },
   {
     icon: <Landmark size={28} />,
-    title: 'Decentralized Monetary Policy',
+    title: 'Distributed Monetary Policy',
     description: 'Anyone who holds SwiftCash can hike or cut the interest rate once per calendar month. Each stakeholder\'s adjustment power is proportional to their stake.',
     accent: 'text-teal-400 bg-teal-500/10',
   },

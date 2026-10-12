@@ -1,4 +1,4 @@
-import { ExternalLink, ShieldCheck, ShieldEllipsis } from 'lucide-react';
+import { ExternalLink, ShieldCheck, ShieldCogCorner } from 'lucide-react';
 
 export default function Audits() {
   return (
@@ -6,7 +6,7 @@ export default function Audits() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/10 px-4 py-1.5 text-xs font-medium text-sky-300">
-            <ShieldEllipsis size={15} className="animate-icon-bounce" />
+            <ShieldCogCorner size={15} className="animate-icon-bounce" />
             Security Audits
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Smart Contract Reviews</h2>

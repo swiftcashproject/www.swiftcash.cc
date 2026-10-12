@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Scale, Gauge, CalendarDays, ChartLine, Layers, ChartSpline, BadgeCheck, UsersRound } from 'lucide-react';
+import { Scale, Gauge, CalendarRange, ChartLine, Layers, ChartNoAxesColumn, ChartSpline, BadgeCheck, UsersRound } from 'lucide-react';
 import type { SwiftData } from '@/hooks/useSwiftData';
 
 interface TokenomicsProps {
@@ -64,7 +64,7 @@ export default function Tokenomics({ data }: TokenomicsProps) {
             <div className="text-6xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">
               {rate.toFixed(2)}%
             </div>
-            <div className="mt-2 flex items-center justify-center gap-2 text-slate-400">Interest is minted and paid by the SwiftCash protocol <BadgeCheck size={17} className="text-emerald-400" /></div>
+            <div className="mt-2 flex items-center justify-center gap-2 text-slate-400">Interest is minted and paid by the protocol <BadgeCheck size={17} className="text-emerald-400" /></div>
           </div>
 
           {/* Rate bar */}
@@ -87,7 +87,7 @@ export default function Tokenomics({ data }: TokenomicsProps) {
               <div className="text-2xl font-bold text-white">150.10M SWIFT</div>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
-              <UsersRound size={22} className="text-emerald-400 mb-3" />
+              <ChartNoAxesColumn size={22} className="text-emerald-400 mb-3" />
               <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Participation Rate</div>
               <div className="text-2xl font-bold text-white">55.40%</div>
             </div>
@@ -101,17 +101,17 @@ export default function Tokenomics({ data }: TokenomicsProps) {
           {/* Rules */}
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
-              <Scale size={22} className="text-emerald-400 mb-3" />
+              <Scale size={22} className="text-teal-400 mb-3" />
               <h3 className="text-white font-semibold mb-1.5">Proportional Power</h3>
               <p className="text-sm text-slate-400">Each stakeholder's influence on the rate is proportional to their stake size.</p>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
-              <CalendarDays size={22} className="text-sky-400 mb-3" />
+              <CalendarRange size={22} className="text-cyan-400 mb-3" />
               <h3 className="text-white font-semibold mb-1.5">Monthly Rate Decisions</h3>
               <p className="text-sm text-slate-400">Each stakeholder can adjust the rate once per calendar month.</p>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
-              <Gauge size={22} className="text-amber-400 mb-3" />
+              <Gauge size={22} className="text-rose-400 mb-3" />
               <h3 className="text-white font-semibold mb-1.5">Monthly Change Cap: ±1%</h3>
               <p className="text-sm text-slate-400">Monthly rate changes are capped at 1% in either direction.</p>
             </div>
