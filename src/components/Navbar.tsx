@@ -40,7 +40,7 @@ export default function Navbar() {
             </span>
           </a>
 
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden min-[1244px]:flex items-center gap-7">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -63,7 +63,7 @@ export default function Navbar() {
           </div>
 
           <button
-            className="md:hidden text-slate-300 hover:text-white"
+            className="min-[1244px]:hidden text-slate-300 hover:text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -72,7 +72,7 @@ export default function Navbar() {
         </div>
 
         {mobileOpen && (
-          <div className="md:hidden pb-4 flex flex-col gap-3 animate-fade-in max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <div className="min-[1244px]:hidden pb-4 flex flex-col gap-3 animate-fade-in max-h-[calc(100vh-4rem)] overflow-y-auto">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}

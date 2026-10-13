@@ -28,8 +28,8 @@ const FEATURES: Feature[] = [
   {
     icon: <DatabasePlus size={28} />,
     title: 'Automatic Compounding',
-    description: 'Compounding is automatic for all participants. Every deposit, withdrawal, or mint-interest call mints all accrued interest, triggering compounding across the entire pool.',
-    accent: 'text-slate-400 bg-slate-500/10',
+    description: 'Compounding is automatic for all participants. Every deposit, withdrawal, or mint-interest call mints all accrued interest, and triggers compounding for everyone.',
+    accent: 'text-sky-500 bg-sky-500/10',
   },
   {
     icon: <Landmark size={28} />,
@@ -47,7 +47,7 @@ const FEATURES: Feature[] = [
     icon: <LockKeyholeOpen size={28} />,
     title: 'No Lock-In Contracts',
     description: 'No lock-in contracts or long-term commitments are required. Earn interest while keeping your funds accessible. Withdraw anytime with no penalties.',
-    accent: 'text-indigo-400 bg-indigo-500/10',
+    accent: 'text-indigo-500 bg-indigo-500/10',
   },
 ];
 

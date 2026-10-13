@@ -94,6 +94,11 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* CoinGecko marquee */}
+        <div className="mb-12 overflow-hidden rounded-xl">
+          <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,litecoin,dogecoin,swiftcash,hive,binancecoin,pancakeswap-token,dash" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
+        </div>
+
         {/* Social icons */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           {SOCIAL_LINKS.map((link) => (
@@ -132,7 +137,7 @@ export default function Footer() {
             <span className="font-bold text-white">Swift<span className="text-sky-400">Cash</span></span>
           </div>
           <p className="text-sm text-slate-500 max-w-2xl mx-auto">
-            Not financial advice. Cryptocurrency investments involve risks.
+            Not financial advice. Investments entail risks.
           </p>
         </div>
       </div>

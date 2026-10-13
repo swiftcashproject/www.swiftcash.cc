@@ -31,7 +31,7 @@ export default function Advantages() {
           <div className="group p-7 rounded-2xl bg-slate-950/60 border border-slate-800/60 hover:border-slate-700 transition-all duration-300 hover:scale-[1.02]">
             <div className="inline-flex p-3.5 rounded-xl text-violet-500 bg-violet-500/10 mb-5"><ChartPie size={28} /></div>
             <h3 className="text-xl font-bold text-white mb-3">Ownership Accumulation</h3>
-            <p className="text-slate-400 leading-relaxed">Unlike zero-inflationary memecoins like Shiba Inu, SwiftCash allows holders to grow their share of the total supply through inflation, without additional investment.</p>
+            <p className="text-slate-400 leading-relaxed">Unlike non-inflationary memecoins such as Shiba Inu, Pepe or Floki, SwiftCash allows holders to grow their share of the total supply through inflationary deposits, without additional investment.</p>
           </div>
         </div>
       </div>

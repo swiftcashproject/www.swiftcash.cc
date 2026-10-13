@@ -29,7 +29,7 @@ const TIMELINE: TimelineEvent[] = [
   {
     year: 'Ongoing',
     title: 'Non-Custodial Yields',
-    description: 'Decentralized and non-custodial deposits that earn interest, stake-driven rate decisions, and no team or developer funds to dilute your stake.',
+    description: 'Decentralized and non-custodial deposits that earn interest, distributed and stake-driven rate decisions, and no team or developer funds to dilute your stake.',
     icon: <Wallet size={24} />,
   },
   {
