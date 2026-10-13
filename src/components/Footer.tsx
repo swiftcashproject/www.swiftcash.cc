@@ -125,6 +125,11 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* CoinGecko marquee */}
+        <div className="mb-12 overflow-hidden rounded-xl">
+          <gecko-coin-price-marquee-widget locale="en" dark-mode="true" outlined="true" coin-ids="bitcoin,ethereum,litecoin,dogecoin,swiftcash,hive,binancecoin,pancakeswap-token,dash" initial-currency="usd"></gecko-coin-price-marquee-widget>
+        </div>
+        
         {/* Bottom */}
         <div className="pt-8 border-t border-slate-800/60 text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
@@ -134,11 +139,6 @@ export default function Footer() {
           <p className="text-sm text-slate-500 max-w-2xl mx-auto">
             Not financial advice. Investments entail risks.
           </p>
-        </div>
-        
-        {/* CoinGecko marquee */}
-        <div className="mb-12 overflow-hidden rounded-xl">
-          <gecko-coin-price-marquee-widget locale="en" dark-mode="true" outlined="true" coin-ids="bitcoin,ethereum,litecoin,dogecoin,swiftcash,hive,binancecoin,pancakeswap-token,dash" initial-currency="usd"></gecko-coin-price-marquee-widget>
         </div>
       </div>
     </footer>
