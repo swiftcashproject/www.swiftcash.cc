@@ -96,7 +96,7 @@ export default function Footer() {
 
         {/* CoinGecko marquee */}
         <div className="mb-12 overflow-hidden rounded-xl">
-          <coingecko-coin-price-marquee-widget coin-ids="bitcoin,ethereum,litecoin,dogecoin,swiftcash,hive,binancecoin,pancakeswap-token,dash" currency="usd" background-color="#ffffff" locale="en"></coingecko-coin-price-marquee-widget>
+          <gecko-coin-price-marquee-widget locale="en" dark-mode="true" outlined="true" coin-ids="bitcoin,ethereum,litecoin,dogecoin,swiftcash,hive,binancecoin,pancakeswap-token,dash" initial-currency="usd"></gecko-coin-price-marquee-widget>
         </div>
 
         {/* Social icons */}
