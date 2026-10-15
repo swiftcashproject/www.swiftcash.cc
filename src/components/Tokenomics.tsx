@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Scale, Gauge, CalendarRange, ChartLine, Layers, ChartNoAxesColumn, ChartSpline, BadgeCheck, UsersRound } from 'lucide-react';
+import { Scale, Gauge, CalendarRange, ChartLine, Layers, ChartNoAxesColumn, ChartSpline, CircleCheck, UsersRound } from 'lucide-react';
 import type { SwiftData } from '@/hooks/useSwiftData';
 
 interface TokenomicsProps {
@@ -64,7 +64,7 @@ export default function Tokenomics({ data }: TokenomicsProps) {
             <div className="text-6xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">
               {rate.toFixed(2)}%
             </div>
-            <div className="mt-2 text-center text-slate-400">Interest is minted and paid by the SwiftCash protocol <BadgeCheck size={17} className="inline-block align-[-3px] text-emerald-400" /></div>
+            <div className="mt-2 text-center text-slate-400">Interest is minted and paid by the SwiftCash protocol <CircleCheck size={17} className="inline-block align-[-3px] text-emerald-400" /></div>
           </div>
 
           {/* Rate bar */}
