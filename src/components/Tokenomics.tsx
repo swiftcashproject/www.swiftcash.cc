@@ -64,7 +64,7 @@ export default function Tokenomics({ data }: TokenomicsProps) {
             <div className="text-6xl sm:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">
               {rate.toFixed(2)}%
             </div>
-            <div className="mt-2 flex items-center justify-center gap-2 text-slate-400"><span>Interest is minted and paid by the SwiftCash protocol</span><BadgeCheck size={17} className="text-emerald-400 shrink-0" /></div>
+            <div className="mt-2 text-center text-slate-400">Interest is minted and paid by the SwiftCash protocol <BadgeCheck size={17} className="inline-block align-[-3px] text-emerald-400" /></div>
           </div>
 
           {/* Rate bar */}

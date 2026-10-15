@@ -2,6 +2,6 @@
 
 declare namespace JSX {
   interface IntrinsicElements {
-    'coingecko-coin-price-marquee-widget': any;
+    'gecko-coin-price-marquee-widget': any;
   }
 }

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import Logo from './Logo';
 import { Send, MessageCircle, ChartCandlestick } from 'lucide-react';
 
@@ -66,6 +67,28 @@ const RESOURCE_LINKS = [
 ];
 
 export default function Footer() {
+  const widgetRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const injectFont = () => {
+      const w = widgetRef.current;
+      if (!w || !w.shadowRoot) return false;
+      const style = document.createElement('style');
+      style.textContent = `* { font-family: 'Oxanium', system-ui, sans-serif !important; }`;
+      w.shadowRoot.appendChild(style);
+      return true;
+    };
+
+    if (injectFont()) return;
+
+    const observer = new MutationObserver(() => {
+      if (injectFont()) observer.disconnect();
+    });
+    const w = widgetRef.current;
+    if (w) observer.observe(w, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <footer id="community" className="relative bg-slate-950 border-t border-slate-800/60">
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
@@ -125,13 +148,12 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* CoinGecko marquee */}
-        <div className="mb-12 overflow-hidden rounded-xl">
-          <gecko-coin-price-marquee-widget locale="en" dark-mode="true" outlined="true" coin-ids="bitcoin,ethereum,litecoin,dogecoin,swiftcash,hive,binancecoin,pancakeswap-token,dash" initial-currency="usd"></gecko-coin-price-marquee-widget>
-        </div>
-        
         {/* Bottom */}
         <div className="pt-8 border-t border-slate-800/60 text-center">
+          {/* CoinGecko marquee */}
+          <div className="mb-8 overflow-hidden rounded-xl">
+            <gecko-coin-price-marquee-widget ref={widgetRef} locale="en" dark-mode="true" outlined="true" coin-ids="bitcoin,ethereum,litecoin,dogecoin,swiftcash,hive,binancecoin,pancakeswap-token,dash" initial-currency="usd"></gecko-coin-price-marquee-widget>
+          </div>
           <div className="flex items-center justify-center gap-2 mb-2">
             <Logo size={24} />
             <span className="font-bold text-white">Swift<span className="text-sky-400">Cash</span></span>

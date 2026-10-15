@@ -34,7 +34,7 @@ export default function Hero({ data }: HeroProps) {
         </div>
 
         {/* Heading */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight mb-6 leading-[1.1]">
           Swift<span className="text-sky-400">Cash</span>
           <span className="block text-2xl sm:text-3xl lg:text-4xl text-slate-400 font-normal mt-3">
             Non-Custodial Crypto Savings
@@ -90,7 +90,7 @@ export default function Hero({ data }: HeroProps) {
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://wallet.swiftcash.cc"
+            href="https://app.swiftcash.cc"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-2 px-7 py-3.5 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-all duration-200 shadow-lg shadow-sky-500/25 hover:shadow-sky-400/40 hover:scale-105"
