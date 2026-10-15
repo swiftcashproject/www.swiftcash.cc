@@ -161,14 +161,6 @@ export default function Footer() {
           <p className="text-sm text-slate-500 max-w-2xl mx-auto">
             Not financial advice. Investments entail risks.
           </p>
-         <div className="flex items-center justify-center gap-2 mb-2">
-          <img
-            src="https://www.hitwebcounter.com/counter/counter.php?page=21524222&style=0024&nbdigits=5&type=ip"
-            alt="Website visitor counter"
-            decoding="async"
-            style={{ border: 0, maxWidth: "100%", height: "auto" }}
-          />
-        </div>
         </div>
       </div>
     </footer>
