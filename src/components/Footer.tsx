@@ -161,7 +161,12 @@ export default function Footer() {
           <p className="text-sm text-slate-500 max-w-2xl mx-auto">
             Not financial advice. Investments entail risks.
           </p>
-          <img src="https://www.hitwebcounter.com/counter/counter.php?page=21524222&amp;style=0024&amp;nbdigits=5&amp;type=ip" alt="Convert PDF to JPG free" decoding="async" style="border:0;max-width:100%;height:auto;" />
+         <img
+              src="https://www.hitwebcounter.com/counter/counter.php?page=21524222&style=0024&nbdigits=5&type=ip"
+              alt="Website visitor counter"
+              decoding="async"
+              style={{ border: 0, maxWidth: "100%", height: "auto" }}
+         />
         </div>
       </div>
     </footer>
