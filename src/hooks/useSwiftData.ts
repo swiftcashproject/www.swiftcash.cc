@@ -94,7 +94,7 @@ export function useSwiftData(): SwiftData {
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : 'unknown';
       if (msg === 'rate_limited') {
-        setError('Live data temporarily unavailable due to API rate limits. Showing cached values.');
+        setError('Live data temporarily unavailable due to API rate limits. Please try again later.');
       } else {
         setError('Unable to fetch live market data. Please try again later.');
       }
