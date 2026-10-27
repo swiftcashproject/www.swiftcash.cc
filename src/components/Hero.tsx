@@ -43,8 +43,7 @@ export default function Hero({ data }: HeroProps) {
 
         {/* Description */}
         <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-          SwiftCash is a decentralized digital cash and cryptocurrency with stake-driven interest rate decisions.
-          Earn 1% to 10% APR with automatic compounding — no custodian or lock-in contracts, full control of your funds at all times.
+          SwiftCash is decentralized digital cash and a 100% Proof-of-Stake cryptocurrency. All newly issued tokens go to stakeholders, with no team or developer allocations to dilute their share. Stakeholders can hike or cut the interest rate, capped at 1% to 10% annually. Interest compounds automatically, with no custodians or lock-in contracts. You retain full control of your funds.
         </p>
 
         {/* Live price card */}
