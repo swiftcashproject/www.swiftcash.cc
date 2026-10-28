@@ -60,10 +60,10 @@ const SOCIAL_LINKS = [
 ];
 
 const RESOURCE_LINKS = [
-  { label: 'Explorer', href: 'https://explorer.swiftcash.cc/' },
   { label: 'CoinGecko', href: 'https://www.coingecko.com/en/coins/swiftcash' },
   { label: 'CoinMarketCap', href: 'https://coinmarketcap.com/currencies/swiftcash' },
-  { label: 'Hive', href: 'https://ecency.com/@swiftcash' },
+  { label: 'News', href: 'https://news.swiftcash.cc' },
+  { label: 'Help', href: 'https://help.swiftcash.cc' },
 ];
 
 export default function Footer() {
