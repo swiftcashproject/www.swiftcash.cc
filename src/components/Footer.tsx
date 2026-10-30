@@ -60,9 +60,9 @@ const SOCIAL_LINKS = [
 ];
 
 const RESOURCE_LINKS = [
+  { label: 'News', href: 'https://news.swiftcash.cc' },
   { label: 'CoinGecko', href: 'https://www.coingecko.com/en/coins/swiftcash' },
   { label: 'CoinMarketCap', href: 'https://coinmarketcap.com/currencies/swiftcash' },
-  { label: 'News', href: 'https://news.swiftcash.cc' },
   { label: 'Help', href: 'https://help.swiftcash.cc' },
 ];
 

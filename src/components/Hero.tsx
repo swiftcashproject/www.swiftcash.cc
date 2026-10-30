@@ -43,7 +43,7 @@ export default function Hero({ data }: HeroProps) {
 
         {/* Description */}
         <p className="text-lg sm:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-          SwiftCash is decentralized digital cash and a 100% Proof-of-Stake cryptocurrency. All newly issued tokens go to stakeholders through interest-bearing deposits, with no team or developer allocations to dilute their share. Stakeholders can hike or cut the annual interest rate, capped between 1% and 10% by the protocol. Interest compounds automatically, with no custodians or lock-in contracts.
+          SwiftCash is decentralized digital cash and a 100% Proof-of-Stake cryptocurrency. All newly issued tokens go to stakeholders through interest-bearing deposits, with no team or developer allocations to dilute their share. Stakeholders can hike or cut the annual rate, capped between 1% and 10% by the protocol. Interest compounds automatically, with no custodians or lock-in contracts.
         </p>
 
         {/* Live price card */}
