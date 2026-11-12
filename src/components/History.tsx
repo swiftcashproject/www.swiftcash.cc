@@ -34,8 +34,8 @@ const TIMELINE: TimelineEvent[] = [
   },
   {
     year: 'Upcoming',
-    title: 'Non-Inflationary Farms',
-    description: 'Lend USDT, USDC, BNB, CAKE, BTC, LTC, etc and earn $SWIFT, powered by the Venus protocol. The yield from Venus will be used to buy SwiftCash at market price.',
+    title: 'SwiftCash DEX',
+    description: 'A fully decentralized, ownerless, and permissionless On-Chain Order Book DEX with zero admin keys and 100% of its revenue hardcoded to buy and burn $SWIFT.',
     icon: <CalendarArrowUp size={24} />,
   },
 ];
