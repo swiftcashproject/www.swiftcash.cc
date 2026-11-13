@@ -35,7 +35,7 @@ const TIMELINE: TimelineEvent[] = [
   {
     year: 'Upcoming',
     title: 'SwiftCash DEX',
-    description: 'A fully decentralized, ownerless, and permissionless On-Chain Order Book DEX with zero admin keys and 100% of its revenue hardcoded to buy and burn $SWIFT.',
+    description: 'A fully decentralized, ownerless, non-custodial and permissionless on-chain order book DEX with 100% of its revenue hardcoded to buy and burn $SWIFT.',
     icon: <CalendarArrowUp size={24} />,
   },
 ];
