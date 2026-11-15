@@ -11,7 +11,7 @@ const TIMELINE: TimelineEvent[] = [
   {
     year: 'July 2017',
     title: 'Proof-of-Work Origins',
-    description: 'The SwiftCash journey dates back to July 2017 as a modified fork of Bitcoin, with elements of Proof-of-Labor and Proof-of-Stake.',
+    description: 'Our journey started in July 2017 as an experimental fork of Bitcoin, with elements of Proof-of-Labor and Proof-of-Stake.',
     icon: <Cpu size={24} />,
   },
   {
@@ -35,7 +35,7 @@ const TIMELINE: TimelineEvent[] = [
   {
     year: 'Upcoming',
     title: 'SwiftCash DEX',
-    description: 'A fully decentralized, ownerless, non-custodial and permissionless on-chain order book DEX with 100% of its revenue hardcoded to buy and burn $SWIFT.',
+    description: 'A decentralized, non-custodial, and permissionless on-chain order book, with 100% of its revenue dedicated to buying and burning $SWIFT.',
     icon: <CalendarArrowUp size={24} />,
   },
 ];
