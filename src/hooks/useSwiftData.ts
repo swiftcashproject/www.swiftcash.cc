@@ -27,6 +27,10 @@ export interface SwiftStats {
   stakers: number | null;
   stakedAmount: number | null;
   interestRate: number;
+  totalDeposits: number | null;
+  totalSupplyOnChain: number | null;
+  participationRate: number | null;
+  annualizedInflation: number | null;
 }
 
 export interface SwiftData {
@@ -42,11 +46,81 @@ const DEFAULT_STATS: SwiftStats = {
   stakers: null,
   stakedAmount: null,
   interestRate: 3,
+  totalDeposits: null,
+  totalSupplyOnChain: null,
+  participationRate: null,
+  annualizedInflation: null,
 };
+
+// SwiftCash token contract on BNB Smart Chain testnet (chain id 97)
+const RPC_URL = 'https://bsc-dataseed.bnbchain.org';
+const TOKEN_ADDRESS = '0x7E6FdC9261CF2439700a84E4E5D833cC8AB1D0a2';
+const RATE_FIXED_POINT = 1e25; // currentAnnualInterestRate() returns % with 25 decimals
+const TOKEN_DECIMALS = 1e18;
+
+const SEL_CURRENT_ANNUAL_INTEREST_RATE = '0xead600d1';
+const SEL_TOTAL_SUPPLY = '0x18160ddd';
+const SEL_BALANCE_OF = '0x70a08231';
+
+async function ethCall(to: string, data: string): Promise<string | null> {
+  try {
+    const res = await fetch(RPC_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'eth_call',
+        params: [{ to, data }, 'latest'],
+      }),
+    });
+    if (!res.ok) return null;
+    const json = await res.json();
+    if (json.error || typeof json.result !== 'string' || json.result === '0x') return null;
+    return json.result;
+  } catch {
+    return null;
+  }
+}
+
+function decodeUint(hex: string): number {
+  return Number(BigInt(hex));
+}
+
+export async function fetchOnChainStats(): Promise<Partial<SwiftStats>> {
+  const selfBalanceData =
+    SEL_BALANCE_OF +
+    TOKEN_ADDRESS.toLowerCase().replace(/^0x/, '').padStart(64, '0');
+
+  const [rateHex, supplyHex, depositsHex] = await Promise.all([
+    ethCall(TOKEN_ADDRESS, SEL_CURRENT_ANNUAL_INTEREST_RATE),
+    ethCall(TOKEN_ADDRESS, SEL_TOTAL_SUPPLY),
+    ethCall(TOKEN_ADDRESS, selfBalanceData),
+  ]);
+
+  if (rateHex === null || supplyHex === null || depositsHex === null) return {};
+
+  const interestRate = decodeUint(rateHex) / RATE_FIXED_POINT;
+  const totalSupplyOnChain = decodeUint(supplyHex) / TOKEN_DECIMALS;
+  const totalDeposits = decodeUint(depositsHex) / TOKEN_DECIMALS;
+
+  if (totalSupplyOnChain <= 0) return {};
+
+  const participationRate = (totalDeposits / totalSupplyOnChain) * 100;
+  const annualizedInflation = (participationRate / 100) * interestRate;
+
+  return {
+    interestRate,
+    totalDeposits,
+    totalSupplyOnChain,
+    participationRate,
+    annualizedInflation,
+  };
+}
 
 export function useSwiftData(): SwiftData {
   const [market, setMarket] = useState<SwiftMarketData | null>(null);
-  const [stats] = useState<SwiftStats>(DEFAULT_STATS);
+  const [stats, setStats] = useState<SwiftStats>(DEFAULT_STATS);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -100,6 +174,11 @@ export function useSwiftData(): SwiftData {
       }
     } finally {
       setLoading(false);
+    }
+
+    const onChain = await fetchOnChainStats();
+    if (Object.keys(onChain).length > 0) {
+      setStats((prev) => ({ ...prev, ...onChain }));
     }
   }, []);
 

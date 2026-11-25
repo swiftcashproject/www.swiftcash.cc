@@ -8,6 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap" rel="stylesheet" />
 
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self' https:;
+        script-src 'self' https://widgets.coingecko.com;
+        frame-src 'self';
+        style-src 'self' 'unsafe-inline' https:;
+        font-src 'self' data: https:;
+        img-src 'self' data: https:;
+        connect-src 'self' https:;
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self' https:;
+    ">
+    
     <!-- Primary Meta Tags -->
     <title>SwiftCash: Crypto Staking, DeFi, Yield, BNB Chain</title>
     <meta name="title" content="SwiftCash: Crypto Staking, DeFi, Yield, BNB Chain" />

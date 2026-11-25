@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Scale, Gauge, CalendarRange, ChartLine, Layers, ChartNoAxesColumn, ChartSpline, CircleCheck, UsersRound } from 'lucide-react';
 import type { SwiftData } from '@/hooks/useSwiftData';
+import { formatSupply } from '@/utils/format';
 
 interface TokenomicsProps {
   data: SwiftData;
@@ -8,6 +9,7 @@ interface TokenomicsProps {
 
 export default function Tokenomics({ data }: TokenomicsProps) {
   const targetRate = data.stats.interestRate;
+  const { totalDeposits, participationRate, annualizedInflation } = data.stats;
   const [rate, setRate] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
@@ -84,17 +86,23 @@ export default function Tokenomics({ data }: TokenomicsProps) {
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
               <Layers size={22} className="text-sky-400 mb-3" />
               <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Total Deposits</div>
-              <div className="text-2xl font-bold text-white">150.10M SWIFT</div>
+              <div className="text-2xl font-bold text-white">
+                {totalDeposits === null ? '--' : `${formatSupply(totalDeposits)} SWIFT`}
+              </div>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
               <ChartNoAxesColumn size={22} className="text-emerald-400 mb-3" />
               <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Participation Rate</div>
-              <div className="text-2xl font-bold text-white">55.40%</div>
+              <div className="text-2xl font-bold text-white">
+                {participationRate === null ? '--' : `${participationRate.toFixed(2)}%`}
+              </div>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
               <ChartSpline size={22} className="text-amber-400 mb-3" />
               <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Annualized Inflation</div>
-              <div className="text-2xl font-bold text-white">1.70%</div>
+              <div className="text-2xl font-bold text-white">
+                {annualizedInflation === null ? '--' : `${annualizedInflation.toFixed(2)}%`}
+              </div>
             </div>
           </div>
 
