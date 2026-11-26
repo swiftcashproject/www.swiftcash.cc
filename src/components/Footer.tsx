@@ -106,7 +106,7 @@ export default function Footer() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://pancakeswap.finance/swap?inputCurrency=0x55d398326f99059fF775485246999027B3197955&outputCurrency=0x99945f484EBc48F5307cC00cF8dCF8d6D3d4B017"
+              href="https://1inch.com/swap?src=56:USDT&dst=56:0x7e6fdc9261cf2439700a84e4e5d833cc8ab1d0a2"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2 px-7 py-3.5 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-400 transition-all duration-200 shadow-lg shadow-sky-500/25 hover:scale-105"
