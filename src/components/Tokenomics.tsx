@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Scale, Gauge, CalendarRange, ChartLine, Layers, ChartNoAxesColumn, ChartSpline, CircleCheck, UsersRound } from 'lucide-react';
 import type { SwiftData } from '@/hooks/useSwiftData';
+import { useCountUp } from '@/hooks/useCountUp';
 import { formatSupply } from '@/utils/format';
 
 interface TokenomicsProps {
@@ -8,9 +9,7 @@ interface TokenomicsProps {
 }
 
 export default function Tokenomics({ data }: TokenomicsProps) {
-  const targetRate = data.stats.interestRate;
   const { totalDeposits, participationRate, annualizedInflation } = data.stats;
-  const [rate, setRate] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
 
@@ -25,21 +24,10 @@ export default function Tokenomics({ data }: TokenomicsProps) {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    if (!inView) return;
-    let target = targetRate;
-    let current = 0;
-    const step = 0.1;
-    const interval = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(interval);
-      }
-      setRate(parseFloat(current.toFixed(2)));
-    }, 30);
-    return () => clearInterval(interval);
-  }, [inView, targetRate]);
+  const rate = useCountUp(data.stats.interestRate, inView);
+  const deposits = useCountUp(totalDeposits, inView);
+  const participation = useCountUp(participationRate, inView);
+  const inflation = useCountUp(annualizedInflation, inView);
 
   const ratePosition = Math.min(100, Math.max(0, ((rate - 1) / 9) * 100));
 
@@ -87,21 +75,21 @@ export default function Tokenomics({ data }: TokenomicsProps) {
               <Layers size={22} className="text-sky-400 mb-3" />
               <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Total Deposits</div>
               <div className="text-2xl font-bold text-white">
-                {totalDeposits === null ? '--' : `${formatSupply(totalDeposits)} SWIFT`}
+                {totalDeposits === null ? '--' : `${formatSupply(deposits)} SWIFT`}
               </div>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
               <ChartNoAxesColumn size={22} className="text-emerald-400 mb-3" />
               <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Participation Rate</div>
               <div className="text-2xl font-bold text-white">
-                {participationRate === null ? '--' : `${participationRate.toFixed(2)}%`}
+                {participationRate === null ? '--' : `${participation.toFixed(2)}%`}
               </div>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
               <ChartSpline size={22} className="text-amber-400 mb-3" />
               <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Annualized Inflation</div>
               <div className="text-2xl font-bold text-white">
-                {annualizedInflation === null ? '--' : `${annualizedInflation.toFixed(2)}%`}
+                {annualizedInflation === null ? '--' : `${inflation.toFixed(2)}%`}
               </div>
             </div>
           </div>
@@ -111,16 +99,16 @@ export default function Tokenomics({ data }: TokenomicsProps) {
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
               <Scale size={22} className="text-teal-400 mb-3" />
               <h3 className="text-white font-semibold mb-1.5">Proportional Power</h3>
-              <p className="text-sm text-slate-400">Each stakeholder's influence on the rate is proportional to their stake.</p>
+              <p className="text-sm text-slate-400">Each account's influence on the rate is proportional to their stake.</p>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
               <CalendarRange size={22} className="text-cyan-400 mb-3" />
-              <h3 className="text-white font-semibold mb-1.5">Monthly Rate Decisions</h3>
-              <p className="text-sm text-slate-400">Each stakeholder can adjust the rate once per calendar month.</p>
+              <h3 className="text-white font-semibold mb-1.5">Monthly Decisions</h3>
+              <p className="text-sm text-slate-400">Each account can adjust the rate once per calendar month.</p>
             </div>
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800/60">
               <Gauge size={22} className="text-rose-400 mb-3" />
-              <h3 className="text-white font-semibold mb-1.5">Monthly Change Cap: ±1%</h3>
+              <h3 className="text-white font-semibold mb-1.5">Monthly Cap: ±1%</h3>
               <p className="text-sm text-slate-400">Monthly rate changes are capped at 1% in either direction.</p>
             </div>
           </div>
